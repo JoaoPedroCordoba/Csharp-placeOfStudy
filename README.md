@@ -60,10 +60,10 @@ O objetivo deste repositório é:
 
 ## 🛠️ Tecnologias Utilizadas
 
-* urlC#[https://learn.microsoft.com/dotnet/csharp/](https://learn.microsoft.com/dotnet/csharp/)
-* url.NET[https://dotnet.microsoft.com/](https://dotnet.microsoft.com/)
-* urlVisual Studio Code[https://code.visualstudio.com/](https://code.visualstudio.com/) ou urlVisual Studio[https://visualstudio.microsoft.com/](https://visualstudio.microsoft.com/)
-* urlGit[https://git-scm.com/](https://git-scm.com/) e urlGitHub[https://github.com/](https://github.com/)
+* C#[https://learn.microsoft.com/dotnet/csharp/](https://learn.microsoft.com/dotnet/csharp/)
+* .NET[https://dotnet.microsoft.com/](https://dotnet.microsoft.com/)
+* Visual Studio Code[https://code.visualstudio.com/](https://code.visualstudio.com/)
+* Git[https://git-scm.com/](https://git-scm.com/) e GitHub[https://github.com/](https://github.com/)
 
 ---
 
