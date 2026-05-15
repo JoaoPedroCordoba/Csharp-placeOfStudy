@@ -5,7 +5,7 @@ using System.Threading;
 
 class Program
 {
-    static void Main (){
+    public static void Main (){
         string dado = "";
         Console.Clear();
         Console.WriteLine("--Selecione a Operação que deseja realizar--");
@@ -18,31 +18,109 @@ class Program
         Console.WriteLine("-Digite exit par sair do programa-");
         dado = Convert.ToString(Console.ReadLine());
 
-
         switch (dado)
         {
-            case "+":
-                Adicao();
-            break;
+            case "+":{
 
-            case "-":
-                Subtracao();
-            break;
+                Console.Clear();
+                Console.Write("Digite o primeiro número: ");
+                double n1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Digite o segundo número: ");
+                double n2 = Convert.ToDouble(Console.ReadLine());
+
+                double resultado = Aritmetica.Adicao(n1, n2);
+
+                 Console.WriteLine($"Resultado: {resultado}");
+
+                 Thread.Sleep(2500);
+
+                Console.WriteLine("--Selecione a Operação que deseja realizar--");
+                Console.WriteLine("+ Soma");      
+                Console.WriteLine("exit - Sair do Programa");
+                string n = "";
+
+                n = Convert.ToString(Console.ReadLine());
+
+                switch (n)
+                {
+                    case "menu":
+                    Program.Main();
+                    break;
+
+                    case "exit":
+                    Console.Clear();
+                    Console.WriteLine("Obrigado por Ultilizar meu Programa👍");
+                    Thread.Sleep(2500);
+                    Console.Clear();
+                    Environment.Exit(0);
+                    break;
+
+                    default:
+                    Console.WriteLine("Digite uma opção valida"); 
+                    Thread.Sleep(2500);
+                    Main();
+                    break;       
+                }
+            break; }
+
+            case "-":{              
+                Console.Clear();
+                Console.Write("Digite o primeiro número: ");
+                double n1 = Convert.ToDouble(Console.ReadLine());
+
+                Console.Write("Digite o segundo número: ");
+                double n2 = Convert.ToDouble(Console.ReadLine());
+
+                double resultado = Aritmetica.Subtracao(n1, n2);
+
+                 Console.WriteLine($"Resultado: {resultado}");
+
+                 Thread.Sleep(2500);
+
+                Console.WriteLine("--Selecione a Operação que deseja realizar--");
+                Console.WriteLine("+ Soma");      
+                Console.WriteLine("exit - Sair do Programa");
+                string n = "";
+
+                n = Convert.ToString(Console.ReadLine());
+
+                switch (n)
+                {
+                    case "menu":
+                    Program.Main();
+                    break;
+
+                    case "exit":
+                    Console.Clear();
+                    Console.WriteLine("Obrigado por Ultilizar meu Programa👍");
+                    Thread.Sleep(2500);
+                    Console.Clear();
+                    Environment.Exit(0);
+                    break;
+
+                    default:
+                    Console.WriteLine("Digite uma opção valida"); 
+                    Thread.Sleep(2500);
+                    Main();
+                    break;       
+                }
+            break;}
 
             case "/":
-                Divisao();
+                Aritmetica.Divisao();
             break;
 
             case "*":
-                Multiplicacao();
+                Aritmetica.Multiplicacao();
             break;
 
             case "~":
-                Raiz();
+                Aritmetica.Raiz();
             break;
 
             case "!":
-                Exponenciacao();
+                Aritmetica.Exponenciacao();
             break;  
 
             case "exit":
@@ -57,27 +135,49 @@ class Program
             break;       
         }
     }
-    static void Adicao()
+}
+
+class Aritmetica
+{
+     public static double Adicao(double a , double b){
+        
+        double soma = a + b;
+
+        return soma;
+
+    }
+
+    public static double Subtracao(double a , double b){
+
+        double subtrair = a - b;
+
+        return subtrair;
+
+    }
+
+    public static void Multiplicacao()
     {
         Console.Clear();
         double numero1 = 0 , numero2 = 0;
 
-        Console.WriteLine("Digite o Primeiro Numero que deseja somar: ");
+        Console.WriteLine("Digite o Primeiro Numero que deseja Multiplicar: ");
         numero1 = Convert.ToDouble(Console.ReadLine());
 
-        Console.WriteLine("Digite o segundo numero que deseja somar: ");
+        Console.WriteLine("Digite o segundo numero que deseja Multiplicar: ");
         numero2 = Convert.ToDouble(Console.ReadLine());
 
-        double soma = numero1 + numero2;
+        double multi = numero1 * numero2;
 
-        Console.WriteLine($"A soma de seus é: {soma} \n");
+        Console.WriteLine($"A Multiplicação é: {multi} \n");
 
         Thread.Sleep(2500);
 
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
         Console.WriteLine("--Selecione a Operação que deseja realizar--");
-        Console.WriteLine("+ Soma");
+        Console.WriteLine("* - Multiplição");
         Console.WriteLine("menu - Retornar ao inicio");        
         Console.WriteLine("exit - Sair do Programa");
+        Console.ResetColor();
         string resultado = "";
 
         resultado = Convert.ToString(Console.ReadLine());
@@ -85,7 +185,7 @@ class Program
         switch (resultado)
         {
             case "menu":
-            Main();
+            Program.Main();
             break;
 
             case "exit":
@@ -96,71 +196,19 @@ class Program
             Environment.Exit(0);
             break;
 
-            case "+":
-            Adicao();
+            case "*":
+            Multiplicacao();
             break;
 
             default:
             Console.WriteLine("Digite uma opção valida"); 
             Thread.Sleep(2500);
-            Adicao();
+            Multiplicacao();
             break;       
         }
-
-
     }
-    static void Subtracao()
-    {
-        Console.Clear();
-        double numero1 = 0 , numero2 = 0;
 
-        Console.WriteLine("Digite o Primeiro Numero que deseja subtrair: ");
-        numero1 = Convert.ToDouble(Console.ReadLine());
-
-        Console.WriteLine("Digite o segundo numero que deseja subtrair: ");
-        numero2 = Convert.ToDouble(Console.ReadLine());
-
-        double subtrair = numero1 - numero2;
-
-        Console.WriteLine($"A subtração de seus é: {subtrair} \n");
-
-        Thread.Sleep(2500);
-
-        Console.WriteLine("--Selecione a Operação que deseja realizar--");
-        Console.WriteLine("- Subtração");
-        Console.WriteLine("menu - Retornar ao inicio");        
-        Console.WriteLine("exit - Sair do Programa");
-        string resultado = "";
-
-        resultado = Convert.ToString(Console.ReadLine());
-
-        switch (resultado)
-        {
-            case "menu":
-            Main();
-            break;
-
-            case "exit":
-            Console.Clear();
-            Console.WriteLine("Obrigado por Ultilizar meu Programa👍");
-            Thread.Sleep(2500);
-            Console.Clear();
-            Environment.Exit(0);
-            break;
-
-            case "+":
-            Subtracao();
-            break;
-
-            default:
-            Console.WriteLine("Digite uma opção valida"); 
-            Thread.Sleep(2500);
-            Adicao();
-            break;
-        }       
-    }
-    static void Divisao()
-    {
+    public static void Divisao(){
         Console.Clear();
         double numero1 = 0 , numero2 = 0;
 
@@ -172,7 +220,7 @@ class Program
 
         double divisao = numero1 / numero2;
 
-        Console.WriteLine($"A divisão de é: {divisao} \n");
+        Console.WriteLine($"A divisão é: {divisao} \n");
 
         Thread.Sleep(2500);
 
@@ -189,7 +237,7 @@ class Program
         switch (resultado)
         {
             case "menu":
-            Main();
+            Program.Main();
             break;
 
             case "exit":
@@ -200,7 +248,7 @@ class Program
             Environment.Exit(0);
             break;
 
-            case "+":
+            case "/":
             Divisao();
             break;
 
@@ -211,7 +259,6 @@ class Program
             break;       
         }
     }  
-    static void Multiplicacao(){}
-    static void Raiz(){}
-    static void Exponenciacao(){}
+    public  static void Raiz(){}
+    public static void Exponenciacao(){}
 }
